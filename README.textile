@@ -1,0 +1,3 @@
+Scrapes "major project assessments":http://majorprojects.planning.nsw.gov.au/page/ in NSW. These are development applications for larger projects and many are assessed as part of the controversial Part 3A planning laws.
+
+This scraper is used by "PlanningAlerts":http://www.planningalerts.org.au/
