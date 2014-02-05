@@ -50,7 +50,7 @@ feed.channel.items.each do |item|
 
   # Skip saving when there is no council_reference or no address
   if record[:council_reference] && record[:address]
-    if ScraperWiki.select("* from data where `council_reference`='#{record[:council_reference]}'").empty? 
+    if (ScraperWiki.select("* from data where `council_reference`='#{record[:council_reference]}'").empty? rescue true)
       ScraperWiki.save_sqlite([:council_reference], record)
     else
       puts "Skipping already saved record " + record[:council_reference]
