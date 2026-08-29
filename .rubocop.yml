@@ -1,0 +1,44 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2
+  Exclude:
+    - bin/*
+
+# Bumping max line length to something a little more reasonable (RubyMine default)
+
+Layout/LineLength:
+  Max: 120
+
+# We prefer double quotes here and it we're making liberal use of multi-line
+# strings so it makes sense to enforce those to be consistent oo
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+
+# Matthew: This one I disagree with. Putting separators in large numbers makes sense
+# in some circumstances but in others (an example id in a database table)
+# it's just nonsensical. Also, I think this one might also be a bit US centric.
+
+Style/NumericLiterals:
+  Enabled: false
+
+# Avoid dumping everything in a Kitchen Sink! Each file should have a single clear responsibility
+
+Metrics/ClassLength:
+  Enabled: true
+  Max: 200
+
+Metrics/ModuleLength:
+  Enabled: true
+  Max: 200
+
+# Keep Methods and blocks readable without scrolling down a page
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 30
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
